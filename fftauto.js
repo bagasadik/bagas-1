@@ -112,13 +112,13 @@ const Excute = async function(User, TargetUsername, TextComment){
 					await Client.Relationship.create(doLogin.session, account.id);
 					console.log(chalk`{bold.green [+|Followed]} ({bold.cyan ${account.username}}) ${account.id}`);
 				}));
-				console.log(chalk`{bold.yellow [!]} Delay For 60000 Milisecond (10 Seconds) To Send DM`);
+				console.log(c//halk`{bold.yellow [!]} Delay For 60000 Milisecond (10 Seconds) To Send DM`);
 				await delay(30000);
 				await Promise.all(account[i].map(async(account) => {
 					await Client.Thread.configureText(doLogin.session, account.id, TextDM);
 					console.log(chalk`{bold.green [+|Send DM]} ({bold.cyan ${account.username}}) ${account.id}`);
 				}))
-				console.log(chalk`{bold.yellow [!]} Delay For 30000 Milisecond (30 Seconds) To Send Comment`);
+				console.log(chalk`{bold.yellow [!]} Delay For 120000 Milisecond (2 Minute) To Send Comment`);
 				await delay(30000);
 				await Promise.all(account[i].map(async(account) => {
 					const doComment = CommentLastPhoto(doLogin.session, account.id, TextComment);
