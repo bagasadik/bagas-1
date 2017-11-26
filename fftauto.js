@@ -119,7 +119,7 @@ const Excute = async function(User, TargetUsername, TextComment){
 					console.log(chalk`{bold.green [+|Send DM]} ({bold.cyan ${account.username}}) ${account.id}`);
 				}))
 				console.log(chalk`{bold.yellow [!]} Delay For 120000 Milisecond (2 Minute) To Send Comment`);
-				await delay(30000);
+				await delay(120000);
 				await Promise.all(account[i].map(async(account) => {
 					const doComment = CommentLastPhoto(doLogin.session, account.id, TextComment);
 					if (doComment) {
@@ -129,7 +129,7 @@ const Excute = async function(User, TargetUsername, TextComment){
 					}
 				}));
 				console.log(chalk`{bold.yellow [!]} Delay For 120000 Milisecond (2 Minute) To Next Block`);
-				await delay(60000);
+				await delay(120000);
 			}
 			console.log(chalk`{bold.yellow [!]} Delay For 600000 Milisecond (10 Minute) To Next Cursor`);
 			await delay(600000);
@@ -142,5 +142,4 @@ const Excute = async function(User, TargetUsername, TextComment){
 }
 
 const TextComment = "Follow Back Kak :D";
-const TextDM = 'Follback Kak :D';
 Excute(User,TargetUsername,TextComment);
