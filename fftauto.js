@@ -12,11 +12,11 @@ const rp = require('request-promise');
 const _ = require('lodash');
 
 const User = {
-    username: '',
-    password: ''
+    username: 'bagasadik',
+    password: 'Jakarta1243'
 }
 
-const TargetUsername = '';
+const TargetUsername = 'andikahonda18';
 
 const Login = async function(User){
 
@@ -128,11 +128,11 @@ const Excute = async function(User, TargetUsername, TextComment){
 						console.log(chalk`{bold.red [-|Comment Failed]} ({bold.cyan ${account.username}}) ${account.id} => GAGAL`);
 					}
 				}));
-				console.log(chalk`{bold.yellow [!]} Delay For 60000 Milisecond (1 Minute) To Next Block`);
+				console.log(chalk`{bold.yellow [!]} Delay For 120000 Milisecond (2 Minute) To Next Block`);
 				await delay(60000);
 			}
-			console.log(chalk`{bold.yellow [!]} Delay For 60000 Milisecond (1 Minute) To Next Cursor`);
-			await delay(30000);
+			console.log(chalk`{bold.yellow [!]} Delay For 600000 Milisecond (10 Minute) To Next Cursor`);
+			await delay(600000);
 		}
 		while(cursor != null);
 	} catch (err) {
