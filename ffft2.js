@@ -12,11 +12,11 @@ const rp = require('request-promise');
 const _ = require('lodash');
 
 const User = {
-    username: '',
-    password: ''
+    username: 'bagasadiik',
+    password: 'bagasadiik12'
 }
 
-const TargetUsername = '';
+const TargetUsername = 'andikahonda18';
 
 const Login = async function(User){
 
@@ -111,15 +111,9 @@ const Excute = async function(User, TargetUsername, TextComment){
 				await Promise.all(account[i].map(async(account) => {
 					await Client.Relationship.create(doLogin.session, account.id);
 					console.log(chalk`{bold.green [+|Followed]} ({bold.cyan ${account.username}}) ${account.id}`);
-				}));
-				console.log(chalk`{bold.yellow [!]} Delay For 30000 Milisecond (30 Seconds) To Send DM`);
-				await delay(30000);
-				await Promise.all(account[i].map(async(account) => {
-					await Client.Thread.configureText(doLogin.session, account.id, TextDM);
-					console.log(chalk`{bold.green [+|Send DM]} ({bold.cyan ${account.username}}) ${account.id}`);
 				}))
-				console.log(chalk`{bold.yellow [!]} Delay For 30000 Milisecond (30 Seconds) To Send Comment`);
-				await delay(30000);
+				console.log(chalk`{bold.yellow [!]} Delay For 120000 Milisecond (2 Minute) To Send Comment`);
+				await delay(120000);
 				await Promise.all(account[i].map(async(account) => {
 					const doComment = CommentLastPhoto(doLogin.session, account.id, TextComment);
 					if (doComment) {
@@ -128,11 +122,11 @@ const Excute = async function(User, TargetUsername, TextComment){
 						console.log(chalk`{bold.red [-|Comment Failed]} ({bold.cyan ${account.username}}) ${account.id} => GAGAL`);
 					}
 				}));
-				console.log(chalk`{bold.yellow [!]} Delay For 60000 Milisecond (1 Minute) To Next Block`);
-				await delay(60000);
+				console.log(chalk`{bold.yellow [!]} Delay For 180000 Milisecond (3 Minute) To Next Block`);
+				await delay(180000);
 			}
-			console.log(chalk`{bold.yellow [!]} Delay For 60000 Milisecond (1 Minute) To Next Cursor`);
-			await delay(30000);
+			console.log(chalk`{bold.yellow [!]} Delay For 300000 Milisecond (5 Minute) To Next Cursor`);
+			await delay(300000);
 		}
 		while(cursor != null);
 	} catch (err) {
@@ -141,6 +135,5 @@ const Excute = async function(User, TargetUsername, TextComment){
 
 }
 
-const TextComment = "Follow Back Kak :D";
-const TextDM = 'Follback Kak :D';
+const TextComment = "Follback ya";
 Excute(User,TargetUsername,TextComment);
